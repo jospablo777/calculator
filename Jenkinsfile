@@ -27,5 +27,15 @@ pipeline {
                 sh "./gradlew checkstyleMain"
             }
         }
+        stage("Package") {
+            steps {
+                sh "./gradlew build"
+            }
+        }
+        stage("Docker build") {
+            steps {
+                sh "docker build -t jospablo777/calculator ."
+            }
+        }
     }
 }
