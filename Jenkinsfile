@@ -39,7 +39,7 @@ pipeline {
         }
         stage("Docker push") {
             steps {
-                sh "docker push jospablo777/calculator"
+                sh "docker push registry:5000/jospablo777/calculator"
             }
         }
     }
